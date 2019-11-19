@@ -16,19 +16,21 @@ public class NameFactory {
 	 */
 	public static void main(String[] args) {
 		int cnt = 0;
-		int limit = 4;
+		int limit = 2;
 		String filename = "Data/newnames.txt";
-		String item = "Gunet Mathiesen";
+		String item = "Awat Petersen";
 		NamesFromFile nf = new NamesFromFile();
 		while (cnt < limit ) {
 			cnt++;
 			nf.importNamesFromCSV(filename,  1);
 			nf.importNamesFromCSV(filename,  2);
 			nf.importNamesFromCSV(filename,  3);
+			nf.importNamesFromCSV(filename,  4);
 			System.out.println("  ");
 			nf.searchForItem(item, 1);
 			nf.searchForItem(item, 2);
 			nf.searchForItem(item, 3);
+			nf.searchForItem(item, 4);
 			
 		}
 

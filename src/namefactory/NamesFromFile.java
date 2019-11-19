@@ -11,6 +11,7 @@ public class NamesFromFile {
 	HashSet<String> namesSet = new HashSet<>();
 	ArrayList<String> namesAL = new ArrayList<>();
 	LinkedList<String> namesLL = new LinkedList<>();
+	MyLinkedList namesMyLL = new MyLinkedList();
 	
 	public void importNamesFromCSV(String filename, int typeofDS){
 		String line = "";
@@ -27,8 +28,10 @@ public class NamesFromFile {
 					namesAL.add(name);
 				if (typeofDS == 2)
 					namesSet.add(name);
-				else
+				if (typeofDS == 3)
 					namesLL.add(name);
+				else 
+					namesMyLL.add(name);
 			}
 		} catch (Exception e) {
 			System.out.println("Error");
@@ -37,15 +40,19 @@ public class NamesFromFile {
 		System.out.println("  ");
 		if (typeofDS == 1){
 			System.out.println("Time in  millis for ArrayL:" + (stopTime - startTime));
-			System.out.println("Size is: " + namesAL.size());
+			System.out.println("ALSize is: " + namesAL.size());
 		}
 		if (typeofDS == 2){
 			System.out.println("Time in  millis for Set:" + (stopTime - startTime));
-			System.out.println("Size is: " + namesSet.size());
+			System.out.println("SetSize is: " + namesSet.size());
 		}
 		if (typeofDS == 3){
 			System.out.println("Time in  millis for LL:" + (stopTime - startTime));
-			System.out.println("Size is: " + namesLL.size());
+			System.out.println("LLSize is: " + namesLL.size());
+		}
+		if (typeofDS == 4){
+			System.out.println("Time in  millis for myLL:" + (stopTime - startTime));
+			System.out.println("mySize is: " + namesLL.size());
 		}
 		
 	}
@@ -64,6 +71,11 @@ public class NamesFromFile {
 		}
 		if (typeOfDS == 3) {
 			System.out.println(item + " occurs i LL:  " + namesLL.contains(item));
+			long stopTime = System.currentTimeMillis();
+			System.out.println("Search Time in  millis for LL:" + (stopTime - startTime));
+		}
+		if (typeOfDS == 4) {
+			System.out.println(item + " occurs i LL:  " + namesMyLL.contains(item));
 			long stopTime = System.currentTimeMillis();
 			System.out.println("Search Time in  millis for LL:" + (stopTime - startTime));
 		}
