@@ -70,6 +70,5 @@ public class NamesFromFile {
 		System.out.println("  ");
 	}
 	
-	
 }
 
