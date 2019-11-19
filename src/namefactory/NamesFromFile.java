@@ -26,6 +26,7 @@ public class NamesFromFile {
 	
 	public void searchForItem(String item,  int typeOfDS) {
 		//TODO: write code that searches for item in collection.
+		// using contains
 		System.out.println("  ");
 	}
 	
