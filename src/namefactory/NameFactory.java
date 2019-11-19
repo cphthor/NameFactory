@@ -14,6 +14,9 @@ public class NameFactory {
 		NamesFromFile nf = new NamesFromFile();
 		nf.importNamesFromCSV(filename,  1);
 		ArrayList<String> names  = nf.getNamesAL();
+		// For at tjekke at der faktisk forsvinder dubletter 
+		// kan man læse numrene ind både i en arrayliste og et sæt.
+		// Man skal derfor generere flere numre end names.size! 
 		
 		HashSet<String> myCprs = new HashSet<>();
 		ArrayList<String> myCprsA = new ArrayList<>();
