@@ -8,12 +8,38 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class NamesFromFile {
-	HashSet<String> namesSet = new HashSet<>();
-	ArrayList<String> namesAL = new ArrayList<>();
-	LinkedList<String> namesLL = new LinkedList<>();
-	MyLinkedList namesMyLL = new MyLinkedList();
+	private HashSet<String> namesSet ;
+	private ArrayList<String> namesAL;
+	private LinkedList<String> namesLL;
+	private MyLinkedList namesMyLL;
+	
+	public NamesFromFile()  {
+		namesSet = new HashSet<>();
+		namesAL = new ArrayList<>();
+		namesLL = new LinkedList<>();
+		namesMyLL = new MyLinkedList();
+	}
+	
+	public HashSet<String> getNamesSet() {
+		return namesSet;
+	}
+	
+	public ArrayList<String> getNamesAL() {
+		return namesAL;
+	}
+	
+	public LinkedList<String> getNamesLL() {
+		return namesLL;
+	}
+	
+	public MyLinkedList getNamesMyLL() {
+		return namesMyLL;
+	}
+	
 	
 	public void importNamesFromCSV(String filename, int typeofDS){
+		CPRFactory myCPRFactory = new CPRFactory();
+		
 		String line = "";
 		String name = "";
 		File fh = new File(filename);
@@ -30,7 +56,7 @@ public class NamesFromFile {
 					namesSet.add(name);
 				if (typeofDS == 3)
 					namesLL.add(name);
-				else 
+				else
 					namesMyLL.add(name);
 			}
 		} catch (Exception e) {
@@ -54,7 +80,6 @@ public class NamesFromFile {
 			System.out.println("Time in  millis for myLL:" + (stopTime - startTime));
 			System.out.println("mySize is: " + namesLL.size());
 		}
-		
 	}
 	
 	public void searchForItem(String item,  int typeOfDS) {
