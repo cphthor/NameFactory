@@ -40,18 +40,16 @@ public class CPRFactory {
 		}
 		yearS = Integer.toString(year);
 		String dateString = monthS + "-" + dayS + "-" + (1900+year);
-//System.out.println(dateString);
-try {
-	Date date = format.parse(dateString);
-} catch (Exception e) {
-	//System.out.println("Error");
-	//System.out.println(e);
-	createCPR();
-}
-
-String cprString = monthS+dayS+yearS+control;
-//System.out.println(cprString);
-return cprString;
+		try {
+			Date date = format.parse(dateString);
+		} catch (Exception e) {
+			// et hack for at sikre en korrekt dato.
+			// random-generatoren må på et tidspunkt ramme ritigt
+			createCPR();
+		}
+		
+		String cprString = monthS+dayS+yearS+control;
+		return cprString;
 	}
 	
 	public int getNumbers() {
