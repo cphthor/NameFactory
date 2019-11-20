@@ -51,9 +51,4 @@ public class CPRFactory {
 		String cprString = monthS+dayS+yearS+control;
 		return cprString;
 	}
-	
-	public int getNumbers() {
-		return 0;
-	}
-	
 }
